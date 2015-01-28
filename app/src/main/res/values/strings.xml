@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Ez-Snips</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="app_name">Ez Snips</string>
     <string name="action_settings">Settings</string>
 
     <string name="Search">Search </string>
+
+    <string name="Main_Icon">Main Icon</string>
 
 </resources>
