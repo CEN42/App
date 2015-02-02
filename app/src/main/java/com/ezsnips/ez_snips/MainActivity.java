@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.graphics.Color;
+import android.database.sqlite.SQLiteDatabase.CursorFactory;
 
 
 public class MainActivity extends Activity {

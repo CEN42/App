@@ -3,10 +3,12 @@
 
     <string name="app_name">Ez Snips</string>
     <string name="action_settings">Settings</string>
-
-    <string name="Search">Search </string>
-
     <string name="Main_Icon">Main Icon</string>
-    <string name="New">Testing</string>
+
+
+    //Store Search Activity - First
+
+    <string name="stores">Stores</string>
+    <string name="search_hint">Search Stores</string>
 
 </resources>
