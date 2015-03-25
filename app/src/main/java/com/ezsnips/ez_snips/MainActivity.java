@@ -16,7 +16,7 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        String listItem []={"Login","Create User Account","Department  Details"};
+        String listItem []={"Logins","Create User Account","Department  Details"};
         ListView lvMain=(ListView)findViewById(R.id.lv_main);
         lvMain.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, listItem));
 
