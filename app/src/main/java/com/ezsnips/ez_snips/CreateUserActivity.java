@@ -18,7 +18,7 @@ import android.os.Build;
 
 public class CreateUserActivity extends Activity {
 
-	EditText etfirstName, etLastName, etUsername, etPassword;
+	EditText etfirstName, etLastName, etUsername, etPassword,etBirthday,etEmail;
 	Button btnCreateUser;
 
 	@Override
@@ -32,6 +32,8 @@ public class CreateUserActivity extends Activity {
 		etLastName = (EditText) findViewById(R.id.et_lastname);
 		etUsername = (EditText) findViewById(R.id.et_cu_username);
 		etPassword = (EditText) findViewById(R.id.et_cu_password);
+        etEmail = (EditText) findViewById(R.id.et_cu_email);
+        etBirthday = (EditText) findViewById(R.id.et_cu_birthday);
 		btnCreateUser=(Button) findViewById(R.id.btn_createuser);
 
 		btnCreateUser.setOnClickListener(new View.OnClickListener() {
@@ -40,15 +42,17 @@ public class CreateUserActivity extends Activity {
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 
-				String firstname, lastname, username, password;
+				String firstname, lastname, username, password,birthday, email;
 
 				firstname = etfirstName.getText().toString();
 				lastname = etLastName.getText().toString();
 				username = etUsername.getText().toString();
 				password = etPassword.getText().toString();
+                email = etEmail.getText().toString();
+                birthday = etBirthday.getText().toString();
 
 				UserDetailsTable userDetail = new UserDetailsTable(firstname,
-						lastname, username, password);
+						lastname, username, password, email,birthday);
 				
 				
 				new AsyncCreateUser().execute(userDetail);
@@ -69,7 +73,7 @@ public class CreateUserActivity extends Activity {
 
 				api.CreateNewAccount(params[0].getFirstName(),
 						params[0].getLastName(), params[0].getUserName(),
-						params[0].getPassword());
+						params[0].getPassword(), params[0].getEmail(), params[0].getBirthday());
 
 			} catch (Exception e) {
 				// TODO Auto-generated catch block

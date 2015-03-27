@@ -2,15 +2,17 @@ package com.ezsnips.ez_snips;
 
 public class UserDetailsTable {
 
-	String firstName,lastName,userName,password;
+	String firstName,lastName,userName,password, email, birthday;
 
 	public UserDetailsTable(String firstName, String lastName, String userName,
-			String password) {
+			String password, String email, String birthday) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.userName = userName;
 		this.password = password;
+        this.email = email;
+        this.birthday = birthday;
 	}
 
 	public UserDetailsTable() {
@@ -19,6 +21,8 @@ public class UserDetailsTable {
 		this.lastName = null;
 		this.userName = null;
 		this.password = null;
+        this.email = null;
+        this.birthday = null;
 	
 	}
 
@@ -53,7 +57,22 @@ public class UserDetailsTable {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(String birthday) {
+        this.birthday = birthday;
+    }
 	
 
 }
