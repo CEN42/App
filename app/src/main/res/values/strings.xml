@@ -10,6 +10,7 @@
 
     //Store Search Activity - First
 
+    <string name="Search">Search for stores</string>
     <string name="stores">Stores</string>
     <string name="search_hint">Search Stores</string>
     <string name="search_label">Stores</string>
@@ -29,6 +30,8 @@
     <string name="email">Email: </string>
     <string name="title_activity_create_user">CreateUserActivity</string>
     <string name="create_user_account">Create User Account</string>
+
+
 
 
 </resources>

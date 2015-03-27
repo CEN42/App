@@ -8,7 +8,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <uses-sdk
-           android:minSdkVersion="8"
+           android:minSdkVersion="16"
            android:targetSdkVersion="18"/>
 
     <application
@@ -28,7 +28,7 @@
         <activity
             android:name=".LoginActivity"
             android:label="@string/title_activity_login"
-            android:parentActivityName=".MainActivity" >
+            android:parentActivityName="com.ezsnips.ez_snips.MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
@@ -39,7 +39,7 @@
             android:parentActivityName=".MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value="com.ezsnips.ez_snips.MainActivity" />
         </activity>
         <activity
             android:name=".UserDetailsActivity"
@@ -47,15 +47,15 @@
             android:parentActivityName=".MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value="com.ezsnips.ez_snips.MainActivity" />
         </activity>
         <activity
             android:name=".CreateUserActivity"
             android:label="@string/title_activity_create_user"
-            android:parentActivityName=".MainActivity" >
+            android:parentActivityName="com.ezsnips.ez_snips.MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value="com.ezsnips.ez_snips.MainActivity" />
         </activity>
     </application>
 
