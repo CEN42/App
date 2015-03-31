@@ -3,9 +3,10 @@ package com.ezsnips.ez_snips;
 public class UserDetailsTable {
 
 	String firstName,lastName,userName,password, email, birthday;
+    Integer phonenumber;
 
 	public UserDetailsTable(String firstName, String lastName, String userName,
-			String password, String email, String birthday) {
+			String password, String email, String birthday, Integer phonenumber) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -13,6 +14,7 @@ public class UserDetailsTable {
 		this.password = password;
         this.email = email;
         this.birthday = birthday;
+        this.phonenumber = phonenumber;
 	}
 
 	public UserDetailsTable() {
@@ -23,6 +25,7 @@ public class UserDetailsTable {
 		this.password = null;
         this.email = null;
         this.birthday = null;
+        this.phonenumber = null;
 	
 	}
 
@@ -72,6 +75,15 @@ public class UserDetailsTable {
 
     public void setBirthday(String birthday) {
         this.birthday = birthday;
+    }
+
+
+    public Integer getPhonenumber() {
+        return phonenumber;
+    }
+
+    public void setPhonenumber(Integer phonenumber) {
+        this.phonenumber = phonenumber;
     }
 	
 

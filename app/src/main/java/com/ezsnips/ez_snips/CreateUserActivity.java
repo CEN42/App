@@ -18,7 +18,7 @@ import android.os.Build;
 
 public class CreateUserActivity extends Activity {
 
-	EditText etfirstName, etLastName, etUsername, etPassword,etBirthday,etEmail;
+	EditText etfirstName, etLastName, etUsername, etPassword,etBirthday,etEmail, etPNumber;
 	Button btnCreateUser;
 
 	@Override
@@ -34,6 +34,7 @@ public class CreateUserActivity extends Activity {
 		etPassword = (EditText) findViewById(R.id.et_cu_password);
         etEmail = (EditText) findViewById(R.id.et_cu_email);
         etBirthday = (EditText) findViewById(R.id.et_cu_birthday);
+        etPNumber = (EditText) findViewById(R.id.et_cu_phonenumber);
 		btnCreateUser=(Button) findViewById(R.id.btn_createuser);
 
 		btnCreateUser.setOnClickListener(new View.OnClickListener() {
@@ -43,6 +44,7 @@ public class CreateUserActivity extends Activity {
 				// TODO Auto-generated method stub
 
 				String firstname, lastname, username, password,birthday, email;
+                Integer phonenumber;
 
 				firstname = etfirstName.getText().toString();
 				lastname = etLastName.getText().toString();
@@ -50,9 +52,10 @@ public class CreateUserActivity extends Activity {
 				password = etPassword.getText().toString();
                 email = etEmail.getText().toString();
                 birthday = etBirthday.getText().toString();
+                phonenumber = Integer.parseInt(etPNumber.getText().toString());
 
 				UserDetailsTable userDetail = new UserDetailsTable(firstname,
-						lastname, username, password, email,birthday);
+						lastname, username, password, email,birthday, phonenumber);
 				
 				
 				new AsyncCreateUser().execute(userDetail);
@@ -73,7 +76,7 @@ public class CreateUserActivity extends Activity {
 
 				api.CreateNewAccount(params[0].getFirstName(),
 						params[0].getLastName(), params[0].getUserName(),
-						params[0].getPassword(), params[0].getEmail(), params[0].getBirthday());
+						params[0].getPassword(), params[0].getEmail(), params[0].getBirthday(), params[0].getPhonenumber());
 
 			} catch (Exception e) {
 				// TODO Auto-generated catch block

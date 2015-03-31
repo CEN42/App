@@ -78,6 +78,17 @@
         android:text="@string/birthday"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/textView7"
+        android:layout_marginTop="20dp"
+        android:text="@string/phonenumber"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+
     <EditText
         android:id="@+id/et_fisrtname"
         android:layout_width="wrap_content"
@@ -141,12 +152,23 @@
         android:layout_alignRight="@+id/et_cu_email"
         android:ems="10" />
 
+    <EditText
+        android:id="@+id/et_cu_phonenumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView8"
+        android:layout_alignBottom="@+id/textView8"
+        android:layout_alignLeft="@+id/et_cu_birthday"
+        android:layout_alignRight="@+id/et_cu_birthday"
+        android:ems="10" />
+
+
 
     <Button
         android:id="@+id/btn_createuser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/et_cu_birthday"
+        android:layout_below="@+id/et_cu_phonenumber"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="34dp"
         android:text="@string/create_user_account" />
