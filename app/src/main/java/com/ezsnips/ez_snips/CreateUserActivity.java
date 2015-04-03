@@ -18,7 +18,7 @@ import android.os.Build;
 
 public class CreateUserActivity extends Activity {
 
-	EditText etfirstName, etLastName, etUsername, etPassword,etBirthday,etEmail, etPNumber;
+	EditText etfirstName, etLastName, etUsername, etPassword,etEmail, etPNumber;
 	Button btnCreateUser;
 
 	@Override
@@ -33,7 +33,6 @@ public class CreateUserActivity extends Activity {
 		etUsername = (EditText) findViewById(R.id.et_cu_username);
 		etPassword = (EditText) findViewById(R.id.et_cu_password);
         etEmail = (EditText) findViewById(R.id.et_cu_email);
-        etBirthday = (EditText) findViewById(R.id.et_cu_birthday);
         etPNumber = (EditText) findViewById(R.id.et_cu_phonenumber);
 		btnCreateUser=(Button) findViewById(R.id.btn_createuser);
 
@@ -43,7 +42,7 @@ public class CreateUserActivity extends Activity {
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 
-				String firstname, lastname, username, password,birthday, email;
+				String firstname, lastname, username, password, email;
                 Integer phonenumber;
 
 				firstname = etfirstName.getText().toString();
@@ -51,11 +50,10 @@ public class CreateUserActivity extends Activity {
 				username = etUsername.getText().toString();
 				password = etPassword.getText().toString();
                 email = etEmail.getText().toString();
-                birthday = etBirthday.getText().toString();
                 phonenumber = Integer.parseInt(etPNumber.getText().toString());
 
 				UserDetailsTable userDetail = new UserDetailsTable(firstname,
-						lastname, username, password, email,birthday, phonenumber);
+						lastname, username, password, email, phonenumber);
 				
 				
 				new AsyncCreateUser().execute(userDetail);
@@ -76,7 +74,7 @@ public class CreateUserActivity extends Activity {
 
 				api.CreateNewAccount(params[0].getFirstName(),
 						params[0].getLastName(), params[0].getUserName(),
-						params[0].getPassword(), params[0].getEmail(), params[0].getBirthday(), params[0].getPhonenumber());
+						params[0].getPassword(), params[0].getEmail(), params[0].getPhonenumber());
 
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
