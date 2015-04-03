@@ -30,7 +30,6 @@ public class CreateUserActivity extends Activity {
 
 		etfirstName =(EditText) findViewById(R.id.et_fisrtname);
 		etLastName = (EditText) findViewById(R.id.et_lastname);
-		etUsername = (EditText) findViewById(R.id.et_cu_username);
 		etPassword = (EditText) findViewById(R.id.et_cu_password);
         etEmail = (EditText) findViewById(R.id.et_cu_email);
         etPNumber = (EditText) findViewById(R.id.et_cu_phonenumber);
@@ -73,7 +72,7 @@ public class CreateUserActivity extends Activity {
 			try {
 
 				api.CreateNewAccount(params[0].getFirstName(),
-						params[0].getLastName(), params[0].getUserName(),
+						params[0].getLastName(),
 						params[0].getPassword(), params[0].getEmail(), params[0].getPhonenumber());
 
 			} catch (Exception e) {
@@ -96,9 +95,9 @@ public class CreateUserActivity extends Activity {
 	/**
 	 * Set up the {@link android.app.ActionBar}, if the API is available.
 	 */
-	@TargetApi(Build.VERSION_CODES.HONEYCOMB)
+	@TargetApi(Build.VERSION_CODES.KITKAT)
 	private void setupActionBar() {
-		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
 			getActionBar().setDisplayHomeAsUpEnabled(true);
 		}
 	}
