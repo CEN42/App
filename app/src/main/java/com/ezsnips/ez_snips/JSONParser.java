@@ -14,7 +14,7 @@ public class JSONParser {
 	{
 	super();	
 	}
-	
+/*
 	public ArrayList<DeptTable> parseDepartment(JSONObject object)
 	{
 		ArrayList<DeptTable> arrayList=new ArrayList<DeptTable>();
@@ -34,7 +34,7 @@ public class JSONParser {
 		}
 		return arrayList;
 	}
-	
+	*/
 	
 	public boolean parseUserAuth(JSONObject object)
 	{	boolean userAtuh=false;
@@ -48,15 +48,15 @@ public class JSONParser {
 			return userAtuh;
 	}
 	
-	public UserDetailsTable parseUserDetails(JSONObject object)
+	public CustomersTable parseUserDetails(JSONObject object)
 	{
-		UserDetailsTable userDetail=new UserDetailsTable();
+        CustomersTable customers=new CustomersTable();
 		
 		try {
 			JSONObject jsonObj=object.getJSONArray("Value").getJSONObject(0);
-			
-			userDetail.setFirstName(jsonObj.getString("firstName"));
-			userDetail.setLastName(jsonObj.getString("lastName"));
+
+            customers.setFirstName(jsonObj.getString("firstName"));
+            customers.setLastName(jsonObj.getString("lastName"));
 			
 			
 		} catch (JSONException e) {
@@ -64,7 +64,7 @@ public class JSONParser {
 			Log.d("JSONParser => parsUserD", e.getMessage());
 		}
 		
-		return userDetail;
+		return customers;
 			
 	}
 	

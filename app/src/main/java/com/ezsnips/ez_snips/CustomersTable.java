@@ -3,27 +3,25 @@ package com.ezsnips.ez_snips;
 /**
  * Created by nigel on 4/3/2015.
  */
-public class Customers {
+public class CustomersTable {
 
-    String firstName,lastName,userName,password, email;
+    String firstName,lastName,password, email;
     Integer phonenumber;
 
-    public Customers(String firstName, String lastName, String userName,
-                            String password, String email, Integer phonenumber) {
+    public CustomersTable(String firstName, String lastName,String email, String password, Integer phonenumber)
+    {
         super();
         this.firstName = firstName;
         this.lastName = lastName;
-        this.userName = userName;
         this.password = password;
         this.email = email;
         this.phonenumber = phonenumber;
     }
 
-    public Customers() {
+    public CustomersTable() {
         super();
         this.firstName = null;
         this.lastName = null;
-        this.userName = null;
         this.password = null;
         this.email = null;
         this.phonenumber = null;
@@ -44,14 +42,6 @@ public class Customers {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
-    }
-
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
     }
 
     public String getPassword() {

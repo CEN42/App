@@ -34,14 +34,6 @@
                 android:value=".MainActivity" />
         </activity>
         <activity
-            android:name=".DeptActivity"
-            android:label="@string/title_activity_dept"
-            android:parentActivityName=".MainActivity" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.ezsnips.ez_snips.MainActivity" />
-        </activity>
-        <activity
             android:name=".UserDetailsActivity"
             android:label="@string/title_activity_user_details"
             android:parentActivityName=".MainActivity" >

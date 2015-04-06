@@ -40,26 +40,26 @@ public class UserDetailsActivity extends Activity {
 	/**
 	 * Set up the {@link android.app.ActionBar}, if the API is available.
 	 */
-	@TargetApi(Build.VERSION_CODES.HONEYCOMB)
+	@TargetApi(Build.VERSION_CODES.KITKAT)
 	private void setupActionBar() {
-		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
 			getActionBar().setDisplayHomeAsUpEnabled(true);
 		}
 	}
 
-	protected class AsyncUserDetails extends AsyncTask<String,Void,UserDetailsTable>
+	protected class AsyncUserDetails extends AsyncTask<String,Void,CustomersTable>
 	{
 
 		@Override
-		protected UserDetailsTable doInBackground(String... params) {
+		protected CustomersTable doInBackground(String... params) {
 			// TODO Auto-generated method stub
-			UserDetailsTable userDetail=null;
+            CustomersTable customers=null;
 			RestAPI api = new RestAPI();
 			try {
 				
 				JSONObject jsonObj = api.GetUserDetails(params[0]);
 				JSONParser parser = new JSONParser();
-				userDetail = parser.parseUserDetails(jsonObj);
+                customers = parser.parseUserDetails(jsonObj);
 
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
@@ -67,11 +67,11 @@ public class UserDetailsActivity extends Activity {
 
 			}
 			
-			return userDetail;
+			return customers;
 		}
 
 		@Override
-		protected void onPostExecute(UserDetailsTable result) {
+		protected void onPostExecute(CustomersTable result) {
 			// TODO Auto-generated method stub
 			
 			tvFisrtName.setText(result.getFirstName());

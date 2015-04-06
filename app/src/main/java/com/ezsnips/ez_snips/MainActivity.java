@@ -16,7 +16,7 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        String listItem []={"Logins","Create User Account","Department  Details"};
+        String listItem []={"Logins","Create User Account"};
         ListView lvMain=(ListView)findViewById(R.id.lv_main);
         lvMain.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, listItem));
 
@@ -36,11 +36,7 @@ public class MainActivity extends Activity {
                     Intent i=new Intent(MainActivity.this,CreateUserActivity.class);
                     startActivity(i);
                 }
-                else if(arg2==2)
-                {
-                    Intent i=new Intent(MainActivity.this,DeptActivity.class);
-                    startActivity(i);
-                }
+
             }
         });
     }

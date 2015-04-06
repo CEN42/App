@@ -104,7 +104,7 @@ public class RestAPI {
 		return finalValue;
 	}
 
-    public JSONObject CreateNewAccount(String firstName,String lastName,String password, String email, Integer phonenumber) throws Exception {
+    public JSONObject CreateNewAccount(String firstName,String lastName,String email, String password, Integer phonenumber) throws Exception {
         JSONObject result = null;
         JSONObject o = new JSONObject();
         JSONObject p = new JSONObject();
@@ -112,8 +112,8 @@ public class RestAPI {
         o.put("method", "CreateNewAccount");
         p.put("firstName",mapObject(firstName));
         p.put("lastName",mapObject(lastName));
-        p.put("password",mapObject(password));
-        p.put("email", mapObject(email));
+        p.put("email",mapObject(email));
+        p.put("password", mapObject(password));
         p.put("phonenumber", mapObject(phonenumber));
         o.put("parameters", p);
         String s = o.toString();
@@ -144,19 +144,6 @@ public class RestAPI {
         o.put("method", "UserAuthentication");
         p.put("userName",mapObject(userName));
         p.put("passsword",mapObject(passsword));
-        o.put("parameters", p);
-        String s = o.toString();
-        String r = load(s);
-        result = new JSONObject(r);
-        return result;
-    }
-
-    public JSONObject GetDepartmentDetails() throws Exception {
-        JSONObject result = null;
-        JSONObject o = new JSONObject();
-        JSONObject p = new JSONObject();
-        o.put("interface","RestAPI");
-        o.put("method", "GetDepartmentDetails");
         o.put("parameters", p);
         String s = o.toString();
         String r = load(s);

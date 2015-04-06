@@ -1,7 +1,5 @@
 package com.ezsnips.ez_snips;
 
-
-
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
@@ -18,7 +16,7 @@ import android.os.Build;
 
 public class CreateUserActivity extends Activity {
 
-	EditText etfirstName, etLastName, etUsername, etPassword,etEmail, etPNumber;
+	EditText etfirstName, etLastName, etPassword,etEmail, etPNumber;
 	Button btnCreateUser;
 
 	@Override
@@ -41,21 +39,20 @@ public class CreateUserActivity extends Activity {
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 
-				String firstname, lastname, username, password, email;
+				String firstname, lastname, password, email;
                 Integer phonenumber;
 
 				firstname = etfirstName.getText().toString();
 				lastname = etLastName.getText().toString();
-				username = etUsername.getText().toString();
-				password = etPassword.getText().toString();
+                password = etPassword.getText().toString();
                 email = etEmail.getText().toString();
                 phonenumber = Integer.parseInt(etPNumber.getText().toString());
 
-				UserDetailsTable userDetail = new UserDetailsTable(firstname,
-						lastname, username, password, email, phonenumber);
+                CustomersTable customers = new CustomersTable(firstname,
+						lastname, email, password, phonenumber);
 				
 				
-				new AsyncCreateUser().execute(userDetail);
+				new AsyncCreateUser().execute(customers);
 
 			}
 		});
@@ -63,17 +60,17 @@ public class CreateUserActivity extends Activity {
 	}
 
 	protected class AsyncCreateUser extends
-			AsyncTask<UserDetailsTable, Void, Void> {
+			AsyncTask<CustomersTable, Void, Void> {
 
 		@Override
-		protected Void doInBackground(UserDetailsTable... params) {
+		protected Void doInBackground(CustomersTable... params) {
 
 			RestAPI api = new RestAPI();
 			try {
 
 				api.CreateNewAccount(params[0].getFirstName(),
-						params[0].getLastName(),
-						params[0].getPassword(), params[0].getEmail(), params[0].getPhonenumber());
+						params[0].getLastName(), params[0].getEmail(),
+						params[0].getPassword(), params[0].getPhonenumber());
 
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
