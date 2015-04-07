@@ -30,9 +30,9 @@ public class UserDetailsActivity extends Activity {
 		tvLastName=(TextView)findViewById(R.id.tv_lastname);
 		
 		Intent i=getIntent();
-		String username=i.getStringExtra("username");
+		String email=i.getStringExtra("email");
 		
-		new AsyncUserDetails().execute(username);
+		new AsyncUserDetails().execute(email);
 		
 		
 	}

@@ -47,11 +47,11 @@ public class LoginActivity extends Activity {
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				
-				String username=etUserName.getText().toString();
+				String email=etUserName.getText().toString();
 				String password=etPassword.getText().toString();
 				
 				// Execute the AsyncLogin class 
-				new AsyncLogin().execute(username,password);
+				new AsyncLogin().execute(email,password);
 				
 			}
 		});
@@ -60,7 +60,7 @@ public class LoginActivity extends Activity {
 
 	protected class AsyncLogin extends AsyncTask<String, JSONObject, Boolean> {
 	
-		String userName=null;
+		String Email=null;
 		@Override
 		protected Boolean doInBackground(String... params) {
 
@@ -76,7 +76,7 @@ public class LoginActivity extends Activity {
 				//Parse the JSON Object to boolean 
 				JSONParser parser = new JSONParser();
 				userAuth = parser.parseUserAuth(jsonObj);
-				userName=params[0];	
+                Email=params[0];
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				Log.d("AsyncLogin", e.getMessage());
@@ -102,7 +102,7 @@ public class LoginActivity extends Activity {
 			if (result) {
 				Intent i = new Intent(LoginActivity.this,
 						UserDetailsActivity.class);
-				i.putExtra("username",userName);
+				i.putExtra("email",Email);
 				startActivity(i);
 			}
 			else

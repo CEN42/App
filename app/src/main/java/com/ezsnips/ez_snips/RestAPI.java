@@ -22,7 +22,7 @@ import org.json.JSONArray;
 
 public class RestAPI {
    
-	private final String urlString ="http://tutecentral.somee.com/Handler1.ashx";
+	private final String urlString ="http://10.0.2.2:100/EZ/Handler1.ashx";
 									//"http://192.168.56.1/JSONWebAPI/Handler1.ashx"; // Genymotion AVD
     								//"http://10.0.2.2/JSONWebAPI/Handler1.ashx"; // Default ANDROID AVD //
     								
@@ -104,7 +104,7 @@ public class RestAPI {
 		return finalValue;
 	}
 
-    public JSONObject CreateNewAccount(String firstName,String lastName,String email, String password, Integer phonenumber) throws Exception {
+    public JSONObject CreateNewAccount(String firstName,String lastName,String email, String password, Double phonenumber) throws Exception {
         JSONObject result = null;
         JSONObject o = new JSONObject();
         JSONObject p = new JSONObject();
@@ -122,13 +122,13 @@ public class RestAPI {
         return result;
     }
 
-    public JSONObject GetUserDetails(String userName) throws Exception {
+    public JSONObject GetUserDetails(String email) throws Exception {
         JSONObject result = null;
         JSONObject o = new JSONObject();
         JSONObject p = new JSONObject();
         o.put("interface","RestAPI");
         o.put("method", "GetUserDetails");
-        p.put("userName",mapObject(userName));
+        p.put("email",mapObject(email));
         o.put("parameters", p);
         String s = o.toString();
         String r = load(s);
@@ -136,13 +136,13 @@ public class RestAPI {
         return result;
     }
 
-    public JSONObject UserAuthentication(String userName,String passsword) throws Exception {
+    public JSONObject UserAuthentication(String email,String passsword) throws Exception {
         JSONObject result = null;
         JSONObject o = new JSONObject();
         JSONObject p = new JSONObject();
         o.put("interface","RestAPI");
         o.put("method", "UserAuthentication");
-        p.put("userName",mapObject(userName));
+        p.put("email",mapObject(email));
         p.put("passsword",mapObject(passsword));
         o.put("parameters", p);
         String s = o.toString();

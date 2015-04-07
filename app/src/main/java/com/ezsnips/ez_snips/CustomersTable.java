@@ -6,9 +6,9 @@ package com.ezsnips.ez_snips;
 public class CustomersTable {
 
     String firstName,lastName,password, email;
-    Integer phonenumber;
+    Double phonenumber;
 
-    public CustomersTable(String firstName, String lastName,String email, String password, Integer phonenumber)
+    public CustomersTable(String firstName, String lastName,String email, String password, Double phonenumber)
     {
         super();
         this.firstName = firstName;
@@ -60,11 +60,11 @@ public class CustomersTable {
         this.email = email;
     }
 
-    public Integer getPhonenumber() {
+    public Double getPhonenumber() {
         return phonenumber;
     }
 
-    public void setPhonenumber(Integer phonenumber) {
+    public void setPhonenumber(Double phonenumber) {
         this.phonenumber = phonenumber;
     }
 

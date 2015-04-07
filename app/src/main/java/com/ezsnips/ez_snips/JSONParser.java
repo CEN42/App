@@ -53,10 +53,15 @@ public class JSONParser {
         CustomersTable customers=new CustomersTable();
 		
 		try {
+
+
 			JSONObject jsonObj=object.getJSONArray("Value").getJSONObject(0);
 
             customers.setFirstName(jsonObj.getString("firstName"));
             customers.setLastName(jsonObj.getString("lastName"));
+            customers.setEmail(jsonObj.getString("email"));
+            customers.setPassword(jsonObj.getString("password"));
+            customers.setPhonenumber(jsonObj.getDouble("phonenumber"));
 			
 			
 		} catch (JSONException e) {

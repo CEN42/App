@@ -40,13 +40,13 @@ public class CreateUserActivity extends Activity {
 				// TODO Auto-generated method stub
 
 				String firstname, lastname, password, email;
-                Integer phonenumber;
+                Double  phonenumber;
 
 				firstname = etfirstName.getText().toString();
 				lastname = etLastName.getText().toString();
                 password = etPassword.getText().toString();
                 email = etEmail.getText().toString();
-                phonenumber = Integer.parseInt(etPNumber.getText().toString());
+                phonenumber = Double.parseDouble(etPNumber.getText().toString());
 
                 CustomersTable customers = new CustomersTable(firstname,
 						lastname, email, password, phonenumber);
