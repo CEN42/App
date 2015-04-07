@@ -14,6 +14,7 @@ import android.support.v4.app.NavUtils;
 import android.annotation.TargetApi;
 import android.content.Intent;
 import android.os.Build;
+import android.widget.Toast;
 
 public class UserDetailsActivity extends Activity {
 
@@ -56,8 +57,8 @@ public class UserDetailsActivity extends Activity {
             CustomersTable customers=null;
 			RestAPI api = new RestAPI();
 			try {
-				
-				JSONObject jsonObj = api.GetUserDetails(params[0]);
+
+                JSONObject jsonObj = api.GetUserDetails(params[0]);
 				JSONParser parser = new JSONParser();
                 customers = parser.parseUserDetails(jsonObj);
 
