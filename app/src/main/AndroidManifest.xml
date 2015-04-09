@@ -49,6 +49,8 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.ezsnips.ez_snips.MainActivity" />
         </activity>
+
+            android:debuggable="true"
     </application>
 
 
