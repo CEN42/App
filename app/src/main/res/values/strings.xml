@@ -35,4 +35,57 @@
 
 
 
+    //chris stuff
+
+
+    <string name="login_title">Login Page</string>
+    <string name="username_login">Username</string>
+    <string name="password_login">Password</string>
+    <string name="button_log_in">Sign In</string>
+    <string name="button_sign_up">Sign Up!</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_sign_up">sign_up</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="client_email">Email</string>
+    <string name="client_password">Password</string>
+    <string name="client_birthday">Birthday</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="sign_up_title">Sign Up Page!</string>
+    <string name="Register">Register!</string>
+    <string name="forgot_password">Forgot Password</string>
+    <string name="request_password">Request Password</string>
+    <string name="p_reset_disclaimer">Password will be sent to you via email</string>
+    <!-- <string name="btn"></string> -->
+    <!-- <string name="btli"></string> -->
+    <string name="title_activity_get_password">get_password</string>
+    <string name="title_activity_company_page">company_page</string>
+    <string name="clock_button_des">Appointment</string>
+
+    <integer name="two">2</integer>
+
+    <string name="Make_Reservation">Make A Reservation</string>
+    <string name="Services">Services</string>
+    <string name="Rewards">Rewards</string>
+    <string name="Location">Location</string>
+    <string name="Log_out">Logout</string>
+    <string name="title_activity_calendar">calendar</string>
+    <string name="title_activity_store_location">Map</string>
+    <string name="title_activity_reservation">reservation</string>
+
+    <string-array name="array_options">
+        <item>Option 1</item>
+        <item>Option 2</item>
+        <item>Option 3</item>
+    </string-array>
+
+    <string name="title_activity_reservation2">reservation2</string>
+    <string name="title_activity_confirm">confirm</string>
+    <string name="title_activity_reservation_stylist">reservation_stylist</string>
+    <string name="title_activity_cancel_res">cancel_res</string>
+    <string name="title_activity_services">services</string>
+    <string name="title_activity_rewards_page">rewards_page</string>
+    <string name="facebook_app_id">380527265468411</string>
+
 </resources>
