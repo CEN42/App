@@ -26,7 +26,7 @@ public class CreateUserActivity extends Activity {
 		// Show the Up button in the action bar.
 		setupActionBar();
 
-		etfirstName =(EditText) findViewById(R.id.et_fisrtname);
+		etfirstName =(EditText) findViewById(R.id.et_firstname);
 		etLastName = (EditText) findViewById(R.id.et_lastname);
 		etPassword = (EditText) findViewById(R.id.et_cu_password);
         etEmail = (EditText) findViewById(R.id.et_cu_email);

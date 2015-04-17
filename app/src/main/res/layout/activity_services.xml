@@ -1,0 +1,439 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/material_deep_teal_500"
+    android:stretchColumns="1">
+
+    <TableRow>
+        <!-- Column 1 -->
+        <TextView
+
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:padding="10dip"
+            android:layout_margin="4dip"
+            android:layout_weight="1"
+            android:textStyle="bold"
+            android:text="Service" />
+
+        <!-- Column 2 -->
+        <TextView
+
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:padding="10dip"
+            android:layout_margin="4dip"
+            android:layout_weight="1"
+            android:textStyle="bold"
+            android:text="Estimate" />
+    </TableRow>
+
+    <TableRow>
+        <!-- Column 1 -->
+        <TextView
+
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:padding="10dip"
+            android:layout_margin="4dip"
+            android:layout_weight="1"
+            android:text="Wash and Cut" />
+
+        <!-- Column 2 -->
+        <TextView
+
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:padding="10dip"
+            android:layout_margin="4dip"
+            android:layout_weight="1"
+            android:text="$29.95" />
+    </TableRow>
+    <TableRow>
+        <!-- Column 1 -->
+        <TextView
+
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:padding="10dip"
+            android:layout_margin="4dip"
+            android:layout_weight="1"
+            android:text="Cut" />
+
+        <!-- Column 2 -->
+        <TextView
+
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:padding="10dip"
+            android:layout_margin="4dip"
+            android:layout_weight="1"
+            android:text="$25" />
+    </TableRow>
+    <TableRow>
+        <!-- Column 1 -->
+        <TextView
+
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:padding="10dip"
+            android:layout_margin="4dip"
+            android:layout_weight="1"
+            android:text="Bangs Cut" />
+
+        <!-- Column 2 -->
+        <TextView
+
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:padding="10dip"
+            android:layout_margin="4dip"
+            android:layout_weight="1"
+            android:text="$8" />
+    </TableRow>
+    <TableRow>
+        <!-- Column 1 -->
+        <TextView
+
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:padding="10dip"
+            android:layout_margin="4dip"
+            android:layout_weight="1"
+            android:text="Child (under 10)" />
+
+        <!-- Column 2 -->
+        <TextView
+
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:padding="10dip"
+            android:layout_margin="4dip"
+            android:layout_weight="1"
+            android:text="$16.95" />
+    </TableRow>
+    <TableRow>
+        <!-- Column 1 -->
+        <TextView
+
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:padding="10dip"
+            android:layout_margin="4dip"
+            android:layout_weight="1"
+            android:text="Teenagers" />
+
+        <!-- Column 2 -->
+        <TextView
+
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:padding="10dip"
+            android:layout_margin="4dip"
+            android:layout_weight="1"
+            android:text="$20.95" />
+    </TableRow>
+    <TableRow>
+        <!-- Column 1 -->
+        <TextView
+
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:padding="10dip"
+            android:layout_margin="4dip"
+            android:layout_weight="1"
+            android:text="Ultimate Treatment" />
+
+        <!-- Column 2 -->
+        <TextView
+
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:padding="10dip"
+            android:layout_margin="4dip"
+            android:layout_weight="1"
+            android:text="$35" />
+    </TableRow>
+    <TableRow>
+        <!-- Column 1 -->
+        <TextView
+
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:padding="10dip"
+            android:layout_margin="4dip"
+            android:layout_weight="1"
+            android:text="Moi Moi Masque" />
+
+        <!-- Column 2 -->
+        <TextView
+
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:padding="10dip"
+            android:layout_margin="4dip"
+            android:layout_weight="1"
+            android:text="$30" />
+    </TableRow>
+    <TableRow>
+        <!-- Column 1 -->
+        <TextView
+
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:padding="10dip"
+            android:layout_margin="4dip"
+            android:layout_weight="1"
+            android:text="Hair First Aid" />
+
+        <!-- Column 2 -->
+        <TextView
+
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:padding="10dip"
+            android:layout_margin="4dip"
+            android:layout_weight="1"
+            android:text="$50" />
+    </TableRow>
+    <TableRow>
+        <!-- Column 1 -->
+        <TextView
+
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:padding="10dip"
+            android:layout_margin="4dip"
+            android:layout_weight="1"
+            android:text="Wash and Blow" />
+
+        <!-- Column 2 -->
+        <TextView
+
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:padding="10dip"
+            android:layout_margin="4dip"
+            android:layout_weight="1"
+            android:text="$25 - $50" />
+    </TableRow>
+    <TableRow>
+        <!-- Column 1 -->
+        <TextView
+
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:padding="10dip"
+            android:layout_margin="4dip"
+            android:layout_weight="1"
+            android:text="Flat Iron" />
+
+        <!-- Column 2 -->
+        <TextView
+
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:padding="10dip"
+            android:layout_margin="4dip"
+            android:layout_weight="1"
+            android:text="$15" />
+    </TableRow>
+    <TableRow>
+        <!-- Column 1 -->
+        <TextView
+
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:padding="10dip"
+            android:layout_margin="4dip"
+            android:layout_weight="1"
+            android:text="Curling Iron" />
+
+        <!-- Column 2 -->
+        <TextView
+
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:padding="10dip"
+            android:layout_margin="4dip"
+            android:layout_weight="1"
+            android:text="$25" />
+    </TableRow>
+    <TableRow>
+        <!-- Column 1 -->
+        <TextView
+
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:padding="10dip"
+            android:layout_margin="4dip"
+            android:layout_weight="1"
+            android:text="UPDO" />
+
+        <!-- Column 2 -->
+        <TextView
+
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:padding="10dip"
+            android:layout_margin="4dip"
+            android:layout_weight="1"
+            android:text="$65" />
+    </TableRow>
+    <TableRow>
+        <!-- Column 1 -->
+        <TextView
+
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:padding="10dip"
+            android:layout_margin="4dip"
+            android:layout_weight="1"
+            android:text="Bridal UPDO" />
+
+        <!-- Column 2 -->
+        <TextView
+
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:padding="10dip"
+            android:layout_margin="4dip"
+            android:layout_weight="1"
+            android:text="$95" />
+    </TableRow>
+    <TableRow>
+        <!-- Column 1 -->
+        <TextView
+
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:padding="10dip"
+            android:layout_margin="4dip"
+            android:layout_weight="1"
+            android:text="Shortest - Long" />
+
+        <!-- Column 2 -->
+        <TextView
+
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:padding="10dip"
+            android:layout_margin="4dip"
+            android:layout_weight="1"
+            android:text="$45 - $60" />
+    </TableRow>
+    <TableRow>
+        <!-- Column 1 -->
+        <TextView
+
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:padding="10dip"
+            android:layout_margin="4dip"
+            android:layout_weight="1"
+            android:text="Sauna" />
+
+        <!-- Column 2 -->
+        <TextView
+
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:padding="10dip"
+            android:layout_margin="4dip"
+            android:layout_weight="1"
+            android:text="$40 - $49" />
+    </TableRow>
+
+    <TableRow>
+        <!-- Column 1 -->
+        <TextView
+
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:padding="10dip"
+            android:layout_margin="4dip"
+            android:layout_weight="1"
+            android:text="Microdermabrasion" />
+
+        <!-- Column 2 -->
+        <TextView
+
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:padding="10dip"
+            android:layout_margin="4dip"
+            android:layout_weight="1"
+            android:text="$99 - $159" />
+    </TableRow>
+    <TableRow>
+    <!-- Column 1 -->
+    <TextView
+
+        android:layout_width="0dip"
+        android:layout_height="wrap_content"
+        android:padding="10dip"
+        android:layout_margin="4dip"
+        android:layout_weight="1"
+        android:text="Swedish Massage" />
+
+    <!-- Column 2 -->
+    <TextView
+
+        android:layout_width="0dip"
+        android:layout_height="wrap_content"
+        android:padding="10dip"
+        android:layout_margin="4dip"
+        android:layout_weight="1"
+        android:text="$85" />
+</TableRow>
+    <TableRow>
+    <!-- Column 1 -->
+    <TextView
+
+        android:layout_width="0dip"
+        android:layout_height="wrap_content"
+        android:padding="10dip"
+        android:layout_margin="4dip"
+        android:layout_weight="1"
+        android:text="Deep Tissue Massage" />
+
+    <!-- Column 2 -->
+    <TextView
+
+        android:layout_width="0dip"
+        android:layout_height="wrap_content"
+        android:padding="10dip"
+        android:layout_margin="4dip"
+        android:layout_weight="1"
+        android:text="$80" />
+</TableRow>
+    <TableRow>
+    <!-- Column 1 -->
+    <TextView
+
+        android:layout_width="0dip"
+        android:layout_height="wrap_content"
+        android:padding="10dip"
+        android:layout_margin="4dip"
+        android:layout_weight="1"
+        android:text="Relax Concoction" />
+
+    <!-- Column 2 -->
+    <TextView
+
+        android:layout_width="0dip"
+        android:layout_height="wrap_content"
+        android:padding="10dip"
+        android:layout_margin="4dip"
+        android:layout_weight="1"
+        android:text="$95" />
+</TableRow>
+
+</TableLayout>
+</ScrollView>
