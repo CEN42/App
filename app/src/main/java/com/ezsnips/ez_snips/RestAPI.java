@@ -22,8 +22,8 @@ import org.json.JSONArray;
 
 public class RestAPI {
    
-	private final String urlString ="http://10.0.2.2:100/EZ/Handler1.ashx";
-
+	//private final String urlString ="http://10.0.2.2:100/EZ/Handler1.ashx";
+    private final String urlString ="http://www.ezsnips.somee.com/Handler1.ashx";
 
     //"http://192.168.56.1/JSONWebAPI/Handler1.ashx"; // Genymotion AVD
     								//"http://10.0.2.2/JSONWebAPI/Handler1.ashx"; // Default ANDROID AVD //

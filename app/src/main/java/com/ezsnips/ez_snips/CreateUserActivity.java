@@ -3,6 +3,7 @@ package com.ezsnips.ez_snips;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
+import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -14,7 +15,7 @@ import android.annotation.TargetApi;
 import android.content.Intent;
 import android.os.Build;
 
-public class CreateUserActivity extends Activity {
+public class CreateUserActivity extends ActionBarActivity {
 
 	EditText etfirstName, etLastName, etPassword,etEmail, etPNumber;
 	Button btnCreateUser;
@@ -83,7 +84,7 @@ public class CreateUserActivity extends Activity {
 		@Override
 		protected void onPostExecute(Void result) {
 
-			Intent i = new Intent(CreateUserActivity.this, LoginActivity.class);
+			Intent i = new Intent(CreateUserActivity.this, MainActivity.class);
 			startActivity(i);
 		}
 
@@ -95,7 +96,7 @@ public class CreateUserActivity extends Activity {
 	@TargetApi(Build.VERSION_CODES.KITKAT)
 	private void setupActionBar() {
 		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-			getActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 		}
 	}
 
