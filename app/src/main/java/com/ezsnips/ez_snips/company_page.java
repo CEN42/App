@@ -32,6 +32,23 @@ public class company_page extends ActionBarActivity {
         Button butt =(Button) findViewById(R.id.Make_Reservation);
         butt.setOnClickListener(listnr4);
 
+
+
+        //View Reservation
+        View.OnClickListener listnr9;
+        listnr9 = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(company_page.this, view_reservation.class);
+                startActivity(i);
+                //finish();
+            }
+        };
+        Button butt9 =(Button) findViewById(R.id.View_Reservation);
+        butt9.setOnClickListener(listnr9);
+
+
+
         /*
             This is going to CANCEL_RES
          */

@@ -12,9 +12,16 @@
 
     <Button
         android:id="@+id/Make_Reservation"
-        android:layout_width="214dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/Make_Reservation"
+        android:onClick="sendMessage"/>
+
+    <Button
+        android:id="@+id/View_Reservation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="View Reservation"
         android:onClick="sendMessage"/>
 
     <Button

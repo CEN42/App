@@ -129,6 +129,10 @@ The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
             android:label="Active Rewards" >
 
         </activity>
+        <activity
+            android:name=".view_reservation"
+            android:label="@string/title_activity_view_reservation" >
+        </activity>
 
 
             android:debuggable="true"
