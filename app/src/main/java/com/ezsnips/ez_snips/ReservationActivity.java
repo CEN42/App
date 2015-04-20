@@ -74,6 +74,7 @@ public class ReservationActivity extends Activity {
         for(int i = 1; i < 10; ++i)
         {
 
+
             dtime.append(hour + ":" + minutes + tday + " to " + (hour + 1) + ":" + minutes + tday);
             times[i] = new StringBuilder(dtime);
             dtime.setLength(0);
