@@ -134,6 +134,12 @@ The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
             android:label="@string/title_activity_view_reservation" >
         </activity>
 
+        <activity
+            android:name=".ReservationStylistActivity"
+            android:label="@string/title_activity_Reservation_Stylist">
+
+        </activity>
+
 
             android:debuggable="true"
     </application>

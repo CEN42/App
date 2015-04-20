@@ -61,7 +61,7 @@ public class calendar extends ActionBarActivity {
                 Toast.makeText(getApplicationContext(), (month+1) + "/" + day + "/" + year, Toast.LENGTH_LONG).show();
 
 
-                Intent i = new Intent(calendar.this, reservation_stylist.class);
+                Intent i = new Intent(calendar.this, ReservationStylistActivity.class);
                 Bundle date = new Bundle();
                 date.putInt("day", day);
                 date.putInt("month", month);

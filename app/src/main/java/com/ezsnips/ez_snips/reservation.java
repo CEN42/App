@@ -27,6 +27,8 @@ public class reservation extends ActionBarActivity implements AdapterView.OnItem
     private TextView cost;
     private TextView name_dis;
 
+    Spinner service_spinner, time_spinner;
+
 
     //Provided Services
     private static final String[] items={"Wash & Cut", "Cut", "Bang Cut", "Child (<10)", "Teenagers",
@@ -51,7 +53,7 @@ public class reservation extends ActionBarActivity implements AdapterView.OnItem
         day = date.getInt("day");
         month = date.getInt("month");
         year = date.getInt("year");
-        theName = date.getString("name");
+        theName = date.getString("stylist");
 
         selection=(TextView)findViewById(R.id.selection);
         time = (TextView)findViewById(R.id.time);
@@ -67,8 +69,8 @@ public class reservation extends ActionBarActivity implements AdapterView.OnItem
         Only then we can pull their times.
 
          */
-        Spinner spinner = (Spinner) findViewById(R.id.spinner1);
-        spinner.setOnItemSelectedListener(this);
+        service_spinner = (Spinner) findViewById(R.id.service);
+        service_spinner.setOnItemSelectedListener(this);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_item, items);
 
@@ -76,7 +78,7 @@ public class reservation extends ActionBarActivity implements AdapterView.OnItem
 //      Specify the layout to use when the list of choices appears
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 //      Apply the adapter to the spinner
-        spinner.setAdapter(adapter);
+        service_spinner.setAdapter(adapter);
 
 
         //When confirm has been hit
@@ -89,7 +91,7 @@ public class reservation extends ActionBarActivity implements AdapterView.OnItem
                 finish();   //We don't want them to press back
             }
         };
-        Button b7 =(Button) findViewById(R.id.workToBeDone);
+        Button b7 =(Button) findViewById(R.id.confirmation);
         b7.setOnClickListener(listnr7);
 
 
