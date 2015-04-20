@@ -79,10 +79,6 @@ public class MainActivity extends Activity {
                 // Execute the AsyncLogin class
                 new AsyncLogin().execute(email,password);
 
-              //  Intent k= new Intent(MainActivity.this, company_page.class);
-              //  startActivity(k);
-              //  finish();
-
 
             }
         };

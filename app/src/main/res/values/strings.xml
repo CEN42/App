@@ -88,6 +88,8 @@
      <string name="NOTICE">Each time to redeem rewards points, it gets subtracted from your total.
     Reward point NEVER expire.</string>
     <string name="title_activity_view_reservation">View Reservation</string>
+
+    <string name="title_activity_Reservation_Stylist">Reservation Stylist</string>
     <string name="info">Reservations: </string>
 
 </resources>

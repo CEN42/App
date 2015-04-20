@@ -25,8 +25,10 @@ public class reservation_stylist extends ActionBarActivity implements AdapterVie
     Bundle date;
 
     Bundle stuff = new Bundle();
+
+
     //Name of the workers
-    public static final String[] names = {"Name 1", "Name 2", "Name 3"};
+    public static final String[] names = {"Betty", "James", "Jessica"};
 
 
 
