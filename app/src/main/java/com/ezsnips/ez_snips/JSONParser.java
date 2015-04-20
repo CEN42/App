@@ -55,7 +55,6 @@ public class JSONParser {
 		try {
 
 
-           // JSONObject jsonObj=object.getJSONArray("Value").getJSONObject(0);
 			JSONObject jsonObj=object.getJSONArray("Value").getJSONObject(0);
 
             customers.setFirstName(jsonObj.getString("firstName"));
