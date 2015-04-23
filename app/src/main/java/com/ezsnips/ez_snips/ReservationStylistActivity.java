@@ -29,8 +29,6 @@ public class ReservationStylistActivity extends Activity {
     ListView listv;
     Context context;
     ArrayList<String> data;
-    Bundle date;
-    Bundle stuff = new Bundle();
     int day;
     int month;
     int year;
@@ -41,37 +39,40 @@ public class ReservationStylistActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stylist);
 
-        setupActionBar();
-        date = getIntent().getExtras();
+       // setupActionBar();
+        Bundle date = getIntent().getExtras();
+        day = date.getInt("day");
+        month = date.getInt("month");
+        year = date.getInt("year");
         data = new ArrayList<String>();
         listv = (ListView) findViewById(R.id.lv_stylist);
         context = this;
 
         adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, data);
         listv.setAdapter(adapter);
-        Toast.makeText(this, "Loading Please Wait...", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "Loading Please Wait...", Toast.LENGTH_SHORT).show();
         new AsyncLoadStylistNames().execute();
 
         listv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                String stylist = "Stylist: " + listv.getItemAtPosition(position).toString();
-
+                String stylist =  listv.getItemAtPosition(position).toString();
+                Bundle stuff = new Bundle();
                 stuff.putString("stylist",stylist);
                 stuff.putInt("day", day);
                 stuff.putInt("month", month);
                 stuff.putInt("year", year);
 
-                Intent i = new Intent(ReservationStylistActivity.this, reservation.class);
+                Intent i = new Intent(ReservationStylistActivity.this, ReservationActivity.class);
                 i.putExtras(stuff);
+
+
                 startActivity(i);
             }
 
         });
     }
-
-
 
     protected class AsyncLoadStylistNames extends AsyncTask<Void, JSONObject, ArrayList<StylistTable>> {
         ArrayList<StylistTable> stylistTable = null;
@@ -111,28 +112,31 @@ public class ReservationStylistActivity extends Activity {
 
             adapter.notifyDataSetChanged();
 
-            Toast.makeText(context,"Loading Completed",Toast.LENGTH_SHORT).show();
+          //  Toast.makeText(context,"Loading Completed",Toast.LENGTH_SHORT).show();
         }
 
     }
     /**
      * Set up the {@link android.app.ActionBar}, if the API is available.
      */
+    /*
+
     @TargetApi(Build.VERSION_CODES.KITKAT)
     private void setupActionBar() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             getActionBar().setDisplayHomeAsUpEnabled(true);
         }
     }
+    */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_reservation_stylist, menu);
 
 
-        day = date.getInt("day");
-        month = date.getInt("month") + 1;
-        year = date.getInt("year");
+     //   day = date.getInt("day");
+    //    month = date.getInt("month") + 1;
+     //   year = date.getInt("year");
         return true;
     }
 

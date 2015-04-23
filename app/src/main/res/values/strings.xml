@@ -90,6 +90,8 @@
     <string name="title_activity_view_reservation">View Reservation</string>
 
     <string name="title_activity_Reservation_Stylist">Reservation Stylist</string>
+    <string name="title_activity_Reservation_Activity">Reservation Activity</string>
+    <string name="title_activity_User_Reservation">User Reservation</string>
     <string name="info">Reservations: </string>
 
 </resources>

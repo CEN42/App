@@ -3,6 +3,7 @@ package com.ezsnips.ez_snips;
 import org.json.JSONObject;
 
 
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
@@ -25,6 +26,7 @@ public class LoginActivity extends Activity {
 	Button btnLogin;
 	Context context;
 
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -32,7 +34,7 @@ public class LoginActivity extends Activity {
 		// Show the Up button in the action bar.
 		setupActionBar();
 
-		
+
 		// Initialize  the layout components 
 		context=this;
 		etUserName = (EditText) findViewById(R.id.et_username);
@@ -89,7 +91,7 @@ public class LoginActivity extends Activity {
 		protected void onPreExecute() {
 			
 			super.onPreExecute();
-			
+
 			Toast.makeText(context, "Please Wait...",Toast.LENGTH_SHORT).show();
 		}
 
@@ -100,9 +102,14 @@ public class LoginActivity extends Activity {
 			
 			//Check user validity 
 			if (result) {
+
+
 				Intent i = new Intent(LoginActivity.this,
 						UserDetailsActivity.class);
-				i.putExtra("email",Email);
+
+
+
+				//i.putExtra("email",Email);
 				startActivity(i);
 			}
 			else

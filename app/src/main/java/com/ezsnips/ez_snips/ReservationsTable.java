@@ -10,7 +10,7 @@ public class ReservationsTable {
     String stylistFirstName,stylistLastName, reservation_start, reseravation_end,  serviceName;
     Double servicePrice;
 
-    public ReservationsTable(String stylistFirstName, String stylistLastName,  String reservation_start, String reseravation_end, String serviceName, Double servicePrice)
+    public ReservationsTable(String stylistFirstName, String stylistLastName, String serviceName,  Double servicePrice, String reservation_start, String reseravation_end)
     {
 
         super();

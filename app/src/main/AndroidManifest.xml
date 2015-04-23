@@ -107,10 +107,6 @@ The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
             android:label="@string/title_activity_reservation2" >
         </activity>
         <activity
-            android:name=".confirm"
-            android:label="@string/title_activity_confirm" >
-        </activity>
-        <activity
             android:name=".reservation_stylist"
             android:label="Choose a Stylist" >
         </activity>
@@ -139,6 +135,21 @@ The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
             android:label="@string/title_activity_Reservation_Stylist">
 
         </activity>
+        <activity
+            android:name=".UserReservations"
+            android:label="@string/title_activity_User_Reservation">
+
+            </activity>
+
+        <activity
+            android:name=".ReservationActivity"
+            android:label="@string/title_activity_Reservation_Activity">
+
+            </activity>
+        <activity
+            android:name=".CancelReservation"
+            ></activity>
+
 
 
             android:debuggable="true"

@@ -22,8 +22,8 @@ import org.json.JSONArray;
 
 public class RestAPI {
    
-	private final String urlString ="http://10.0.2.2:100/EZ/Handler1.ashx";
-   // private final String urlString ="http://www.ezsnips.somee.com/Handler1.ashx";
+//	private final String urlString ="http://10.0.2.2:100/EZ/Handler1.ashx";
+   private final String urlString ="http://www.ezsnips.somee.com/Handler1.ashx";
 
 
     //"http://192.168.56.1/JSONWebAPI/Handler1.ashx"; // Genymotion AVD
@@ -154,7 +154,7 @@ public class RestAPI {
         return result;
     }
 
-    public JSONObject SetReservation(String email, String stylist, String service, String sdate, String edate, String year) throws Exception
+    public JSONObject SetReservation(String email, String stylist, String service, String fdate, String edate)throws Exception
     {
         JSONObject result = null;
         JSONObject o = new JSONObject();
@@ -163,11 +163,9 @@ public class RestAPI {
         o.put("method", "SetReservation");
         p.put("email",mapObject(email));
         p.put("stylist",mapObject(stylist));
-        p.put("email",mapObject(email));
-        p.put("service", mapObject(service));
-        p.put("sdate", mapObject(sdate));
+        p.put("service",mapObject(service));
+        p.put("fdate", mapObject(fdate));
         p.put("edate", mapObject(edate));
-        p.put("year", mapObject(year));
         o.put("parameters", p);
         String s = o.toString();
         String r = load(s);

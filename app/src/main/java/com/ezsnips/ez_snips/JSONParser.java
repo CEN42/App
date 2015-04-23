@@ -1,4 +1,5 @@
 package com.ezsnips.ez_snips;
+import java.io.Console;
 import java.util.ArrayList;
 
 import org.json.JSONArray;
@@ -14,28 +15,7 @@ public class JSONParser {
 	{
 	super();	
 	}
-/*
-	public ArrayList<DeptTable> parseDepartment(JSONObject object)
-	{
-		ArrayList<DeptTable> arrayList=new ArrayList<DeptTable>();
-		try {
-			JSONArray jsonArray=object.getJSONArray("Value");
-			JSONObject jsonObj=null;
-			for(int i=0;i<jsonArray.length();i++)
-			{
-				jsonObj=jsonArray.getJSONObject(i);
-				arrayList.add(new DeptTable(jsonObj.getInt("no"), jsonObj.getString("name")));
-			}
-			
-		
-		} catch (JSONException e) {
-			// TODO Auto-generated catch block
-			Log.d("JSONParser => parseDept", e.getMessage());
-		}
-		return arrayList;
-	}
-	*/
-	
+
 	public boolean parseUserAuth(JSONObject object)
 	{	boolean userAtuh=false;
 			try {
@@ -73,28 +53,28 @@ public class JSONParser {
 			
 	}
 
-	public ReservationsTable parseUserReservations(JSONObject object)
+	public ArrayList<ReservationsTable> parseUserReservations(JSONObject object)
 	{
-		ReservationsTable reservations = new ReservationsTable();
+        ArrayList<ReservationsTable> arrayList=new ArrayList<ReservationsTable>();
 
 		try{
+            JSONArray jsonArray=object.getJSONArray("Value");
+            JSONObject jsonObj;
 
-			JSONObject jsonObj=object.getJSONArray("Value").getJSONObject(0);
+            for(int i =0; i <jsonArray.length(); ++i) {
+                jsonObj=jsonArray.getJSONObject(i);
+                arrayList.add(new ReservationsTable(jsonObj.getString("EmployeeFN"), jsonObj.getString("EmployeeLN"),
+                        jsonObj.getString("sTitle"), jsonObj.getDouble("amount"), jsonObj.getString("resStart"),
+                        jsonObj.getString("resEnd")));
 
-			reservations.setStylistFirstName(jsonObj.getString("EmployeeFN"));
-			reservations.setStylistLastName(jsonObj.getString("EmployeeLN"));
-			reservations.setServiceName(jsonObj.getString("sTitle"));
-			reservations.setServicePrice(jsonObj.getDouble("amount"));
-			reservations.setReservation_start(jsonObj.getString("reStart"));
-			reservations.setReseravation_end(jsonObj.getString("resEnd"));
-
+            }
 		}
 		catch (JSONException e) {
 			// TODO Auto-generated catch block
 			Log.d("JSONParser => parsUserR", e.getMessage());
 
 		}
-			return reservations;
+			return arrayList;
 
 	}
 
@@ -103,7 +83,7 @@ public class JSONParser {
 		ArrayList<StylistTable> arrayList=new ArrayList<StylistTable>();
 		try {
 			JSONArray jsonArray=object.getJSONArray("Value");
-			JSONObject jsonObj=null;
+			JSONObject jsonObj;
 			for(int i=0;i<jsonArray.length();i++)
 			{
 				jsonObj=jsonArray.getJSONObject(i);
@@ -123,17 +103,17 @@ public class JSONParser {
 		ArrayList<ServicesTable> arrayList=new ArrayList<ServicesTable>();
 		try {
 			JSONArray jsonArray=object.getJSONArray("Value");
-			JSONObject jsonObj=null;
+			JSONObject jsonObj;
 			for(int i=0;i<jsonArray.length();i++)
 			{
 				jsonObj=jsonArray.getJSONObject(i);
-				arrayList.add(new ServicesTable(jsonObj.getString("servicetitle"), jsonObj.getDouble("amount")));
-			}
+				arrayList.add(new ServicesTable(jsonObj.getString("servicetitle"), jsonObj.getString("amount")));
 
+   			}
 
 		} catch (JSONException e) {
 			// TODO Auto-generated catch block
-			Log.d("JSONParser => parseName", e.getMessage());
+			Log.d("JSONParser => parseServ", e.getMessage());
 		}
 		return arrayList;
 	}

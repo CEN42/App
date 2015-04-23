@@ -9,6 +9,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 
@@ -29,7 +30,7 @@ public class company_page extends ActionBarActivity {
                 //finish();
             }
         };
-        Button butt =(Button) findViewById(R.id.Make_Reservation);
+        ImageButton butt =(ImageButton) findViewById(R.id.Make_Reservation);
         butt.setOnClickListener(listnr4);
 
 
@@ -39,12 +40,12 @@ public class company_page extends ActionBarActivity {
         listnr9 = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(company_page.this, view_reservation.class);
+                Intent i = new Intent(company_page.this, UserReservations.class);
                 startActivity(i);
                 //finish();
             }
         };
-        Button butt9 =(Button) findViewById(R.id.View_Reservation);
+        ImageButton butt9 =(ImageButton) findViewById(R.id.View_Reservation);
         butt9.setOnClickListener(listnr9);
 
 
@@ -57,12 +58,12 @@ public class company_page extends ActionBarActivity {
         listnr6 = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(company_page.this, cancel_res.class);
+                Intent i = new Intent(company_page.this, CancelReservation.class);
                 startActivity(i);
                 //finish();
             }
         };
-        Button butt6 =(Button) findViewById(R.id.Cancel_Reservation);
+        ImageButton butt6 =(ImageButton) findViewById(R.id.Cancel_Reservation);
         butt6.setOnClickListener(listnr6);
 
 
@@ -76,7 +77,7 @@ public class company_page extends ActionBarActivity {
                 //finish();
             }
         };
-        Button b7 =(Button) findViewById(R.id.Service);
+        ImageButton b7 =(ImageButton) findViewById(R.id.Service);
         b7.setOnClickListener(listnr7);
 
         //Rewards
@@ -89,7 +90,7 @@ public class company_page extends ActionBarActivity {
                 //finish();
             }
         };
-        Button b8 =(Button) findViewById(R.id.Rewards);
+        ImageButton b8 =(ImageButton) findViewById(R.id.Rewards);
         b8.setOnClickListener(listnr8);
 
 
@@ -103,7 +104,7 @@ public class company_page extends ActionBarActivity {
                 //finish();
             }
         };
-        Button b2 =(Button) findViewById(R.id.Location);
+        ImageButton b2 =(ImageButton) findViewById(R.id.Location);
         b2.setOnClickListener(listnr5);
     }
 

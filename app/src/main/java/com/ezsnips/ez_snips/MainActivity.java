@@ -1,10 +1,12 @@
 package com.ezsnips.ez_snips;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -24,11 +26,15 @@ public class MainActivity extends Activity {
     EditText etUserName, etPassword;
     Button btnLogin;
     Context context;
+    SharedPreferences pref ;
+    SharedPreferences.Editor editor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        pref = getSharedPreferences("MyData", Context.MODE_PRIVATE);
+        editor = pref.edit();
 
 
         // Initialize  the layout components
@@ -128,9 +134,16 @@ public class MainActivity extends Activity {
 
             //Check user validity
             if (result) {
+
+                editor.putString("username",Email);
+                editor.commit();
+                String username = pref.getString("username", "nothing");
+
+                Toast.makeText(context,"Email is:"+ username, Toast.LENGTH_LONG).show();
+
                 Intent i = new Intent(MainActivity.this,
                         company_page.class);
-                i.putExtra("email",Email);
+              //  i.putExtra("email",Email);
                 startActivity(i);
             }
             else

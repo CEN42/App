@@ -4,9 +4,11 @@ import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.Menu;
@@ -29,16 +31,20 @@ import java.util.ArrayList;
 public class ReservationActivity extends Activity {
 
     int day,month,year, hour;
-    String stylist, spinner_selec, minutes;
+    String stylist, minutes,stylist_name, fdate, fyear, job, price, duty;
     private TextView service, time, cost, stylistName;
     StringBuilder[] times = new StringBuilder[10];
     StringBuilder dtime = new StringBuilder();
     StringBuilder tday = new StringBuilder();
 
+    SharedPreferences pref;
+    String name;
+
 
     Bundle date;
     ArrayList<String> data;
-    ArrayList<Double> prices;
+    ArrayList<String> prices;
+    ArrayList<StringBuilder> times1;
     ArrayAdapter<String> services_adapter;
     ArrayAdapter<StringBuilder>time_adapter;
     Spinner service_spinner, time_spinner, add_spinner;
@@ -47,11 +53,18 @@ public class ReservationActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reservation);
-        Bundle date = getIntent().getExtras();
+        date = getIntent().getExtras();
         day = date.getInt("day");
         month = date.getInt("month");
         year = date.getInt("year");
         stylist = date.getString("stylist");
+
+        pref = getSharedPreferences("MyData", Context.MODE_PRIVATE);
+        name =  pref.getString("username","nothing");
+
+        data = new ArrayList<>();
+        prices = new ArrayList<>();
+        times1 = new ArrayList<>();
 
         //declaring textview displays
         stylistName = (TextView) findViewById(R.id.name_display);
@@ -60,17 +73,16 @@ public class ReservationActivity extends Activity {
         cost = (TextView) findViewById(R.id.cost);
 
         //declaring spinners
-        service_spinner = (Spinner) findViewById(R.id.service);
         time_spinner = (Spinner) findViewById(R.id.stime);
         add_spinner = (Spinner) findViewById(R.id.add_service);
+        service_spinner = (Spinner) findViewById(R.id.service);
 
-        //setting adapters of services
-        services_adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, data);
+
 
         //strings and ints for displays
         hour = 8;
         minutes = "00";
-        tday.append("am");
+        tday.append(" AM");
         for(int i = 1; i < 10; ++i)
         {
 
@@ -84,18 +96,17 @@ public class ReservationActivity extends Activity {
             {
                 hour = 1;
                 tday.setLength(0);
-                tday.append("pm");
+                tday.append(" PM");
             }
-
+                times1.add(times[i]);
         }
-        time_adapter = new ArrayAdapter<StringBuilder>(this, android.R.layout.simple_spinner_item,times);
 
 
+
+        time_adapter = new ArrayAdapter<StringBuilder>(this, android.R.layout.simple_spinner_item,times1);
 //      Specify the layout to use when the list of choices appears
-        services_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         time_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 //      Apply the adapter to the spinner
-        service_spinner.setAdapter(services_adapter);
         time_spinner.setAdapter(time_adapter);
 
 
@@ -106,11 +117,12 @@ public class ReservationActivity extends Activity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
-                String stylist_name = "Stylist: " + stylist;
-                String date = "Date Chosen: " + month + "/" + day + "/" + year;
-                String job = "Work to be Done: " + service_spinner.getItemAtPosition(position).toString();
-                String price = "Estimate: $" + prices.get(position);
+                 stylist_name = "Stylist: " + stylist;
+                 String date = "Date Chosen: " + (month + 1) + "/" + day + "/" + year;
+                 job = "Work to be Done: " + service_spinner.getItemAtPosition(position).toString();
+                 price = "Estimate: $" + prices.get(position);
 
+                duty = service_spinner.getItemAtPosition(position).toString();
                 stylistName.setText(stylist_name);
                 time.setText(date);
                 service.setText(job);
@@ -125,7 +137,9 @@ public class ReservationActivity extends Activity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
-                String date = "Date Chosen: " + time_spinner.getItemAtPosition(position).toString() + " at " + month + "/" + day + "/" + year;
+                String date = "Date Chosen: " + time_spinner.getItemAtPosition(position).toString() + " at " + (month + 1) + "/" + day + "/" + year;
+                fdate = new String( time_spinner.getItemAtPosition(position).toString());
+                fyear = new String(year +"/"+ (month + 1) + "/"+day );
 
                 time.setText(date);
             }
@@ -154,9 +168,20 @@ public class ReservationActivity extends Activity {
         view2 = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent j = new Intent(ReservationActivity.this, company_page.class);
-                startActivity(j);
-                finish();   //We don't want them to press back
+
+                String [] tokens =  stylist.split(" ");
+
+                String[] t = fdate.split("to");
+
+                String start_date = new String(fyear);
+                String end_date = new String(fyear);
+
+                start_date= start_date.concat(" " + t[0]);
+                end_date= end_date.concat(" " + t[1]);
+
+               SetReservationTable reservations = new  SetReservationTable(name,tokens[0],duty,start_date,end_date);
+                new AsyncSetServices().execute(reservations);
+
             }
         };
 
@@ -164,6 +189,35 @@ public class ReservationActivity extends Activity {
         confirm.setOnClickListener(view2);
     }
 
+    protected  class AsyncSetServices extends AsyncTask<SetReservationTable, Void, Void> {
+
+        @Override
+        protected Void doInBackground(SetReservationTable... params) {
+
+            RestAPI api = new RestAPI();
+            try {
+
+                api.SetReservation(params[0].getEmail(),  params[0].getStylist(),
+                        params[0].getService(), params[0].getSdate(),params[0].getSyear());
+
+            } catch (Exception e) {
+                // TODO Auto-generated catch block
+                Log.d("AsyncCreateUser", e.getMessage());
+
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void result) {
+
+
+            Intent j = new Intent(ReservationActivity.this, company_page.class);
+            startActivity(j);
+            finish();   //We don't want them to press back
+        }
+
+    }
     protected class AsyncLoadServices extends AsyncTask<Void, JSONObject, ArrayList<ServicesTable>>{
         ArrayList<ServicesTable> servicesTable = null;
 
@@ -171,6 +225,7 @@ public class ReservationActivity extends Activity {
         @Override
         protected ArrayList<ServicesTable> doInBackground(Void... params) {
         // TODO Auto-generated method stub
+
 
             RestAPI api = new RestAPI();
             try {
@@ -195,17 +250,25 @@ public class ReservationActivity extends Activity {
         protected void onPostExecute(ArrayList<ServicesTable> result) {
             // TODO Auto-generated method stub
 
+
+
             for (int i = 0; i < result.size(); i++) {
 
                 data.add(result.get(i).getServicetitle());
+
                 prices.add(result.get(i).getAmount());
             }
-
+        //setting adapters of services
+            services_adapter = new ArrayAdapter<String>(ReservationActivity.this, android.R.layout.simple_spinner_item, data);
+            services_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            service_spinner.setAdapter(services_adapter);
             services_adapter.notifyDataSetChanged();
+
 
             //Toast.makeText(context, "Loading Completed", Toast.LENGTH_SHORT).show();
         }
     }
+
 
     /**
      * Set up the {@link android.app.ActionBar}, if the API is available.
@@ -222,10 +285,7 @@ public class ReservationActivity extends Activity {
         getMenuInflater().inflate(R.menu.menu_reservation, menu);
 
 
-        day = date.getInt("day");
-        month = date.getInt("month") + 1;
-        year = date.getInt("year");
-        stylist = date.getString("stylist");
+
         return true;
     }
 
@@ -236,7 +296,6 @@ public class ReservationActivity extends Activity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;

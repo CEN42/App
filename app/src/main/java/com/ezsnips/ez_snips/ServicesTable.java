@@ -6,9 +6,9 @@ package com.ezsnips.ez_snips;
 public class ServicesTable {
 
     String servicetitle;
-    Double amount;
+    String amount;
 
-    public ServicesTable(String servicetitle, Double amount)
+    public ServicesTable(String servicetitle, String amount)
     {
         this.servicetitle = servicetitle;
         this.amount = amount;
@@ -25,7 +25,7 @@ public class ServicesTable {
     public void setServiceTitle(String servicetitle){this.servicetitle = servicetitle;}
     public String getServicetitle(){return servicetitle;}
 
-    public void setAmount(Double amount){this.amount = amount;}
-    public Double getAmount(){return amount;}
+    public void setAmount(String amount){this.amount = amount;}
+    public String getAmount(){return amount;}
 
 }
